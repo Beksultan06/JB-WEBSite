@@ -1,0 +1,185 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'assets/css/include/header.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/include/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/components/about.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/components/slider.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/components/bonus.css' %}">
+    <title>Жашыл Бонус</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header_container">
+            <a href="#" class="header_link-logo">
+                <img src="../static/assets/icon/logo_white.svg" alt="Логотип JashylBonus — платформа бонусов и акций"
+                    class="header_logo">
+            </a>
+            <nav class="header_nav">
+                <a href="./index.html" class="header_link text">Главная</a>
+                <a href="./about.html" class="header_link text">О нас</a>
+                <a href="./portfolio.html" class="header_link text">Портфолио </a>
+                <a href="./services.html" class="header_link text">Услуги</a>
+            </nav>
+            <div class="header_tools">
+                <button class="btn-cssbuttons">
+                    <span>
+                        Язык <img src="../static/assets/icon/vector_language.svg" alt="">
+                    </span>
+                    <ul>
+                        <li>
+                            <a class="text" href="#">RU</a>
+                        </li>
+                        <li>
+                            <a class="text" href="#">KG</a>
+                        </li>
+                        <li>
+                            <a class="text" href="#">EN</a>
+                        </li>
+                    </ul>
+                </button>
+                <div class="container-search">
+                    <input checked="" class="checkbox" type="checkbox">
+                    <div class="mainbox">
+                        <div class="iconContainer">
+                            <img src="../static/assets/icon/search_icons.svg" alt="">
+                        </div>
+                        <input class="search_input" placeholder="Поиск" type="text">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <section class="banner" style="background-image: url({{ settings_id.image.url }});">
+            <div class="banner-blur">
+                <h1>{{ settings_id.title }}</h1>
+                <h2>{{ settings_id.description }}</h2>
+                <a class="banner-blur-a" href="./about.html">подробнее</a>
+            </div>
+        </section>
+        <secction class="about container">
+            <h4>{{ settings_id.title2 }}</h4>
+            <div class="about-texts">
+                <h2>{{ settings_id.title2 }}</h2>
+                <p>{{ settings_id.description2 }}</p>
+            </div>
+            <img src="{{ settings_id.image2.url }}" alt="О проекте Жашыл Бонус">
+        </secction>
+        <section class="slider container">
+            {% for image in image_all %}
+            <img class="slider-img" src="{{ image.image.url }}" alt="">
+            {% endfor %}
+
+            <div>
+                <img class="slider-btn left" src="../static/assets/icon/slider/btn-left.svg">
+            </div>
+
+            <div>
+                <img class="slider-btn right" src="../static/assets/icon/slider/btn-right.svg">
+            </div>
+
+        </section>
+        <section class="bonus container">
+            <h4>Бонусы</h4>
+            <div class="bonus-box">
+                <h2>3 шага к бонусу</h2>
+                <div class="bonus-box-cards">
+                    {% for bonus in bonus_all %}
+                    <div class="card">
+                        <h3>{{ bonus.title }}</h3>
+                        <h1>{{ bonus.id }}</h1>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        <section class="team ">
+            <div class="container team-container">
+                <h4>{{ settings_id.title_team }}</h4>
+                <div class="team-cards">
+                    {% for team in team_all %}
+                    <div class="team-card">
+                        <img src="{{ team.image.url }}" alt="">
+                        <h3>{{ team.name }}</h3>
+                        <p>{{ team.role }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container footer_container">
+            <section class="footer_left">
+                <img src="../static/assets/icon/logo_white.svg" alt="Логотип JashylBonus — платформа бонусов и акций">
+                <div class="footer_left-links">
+                    <a href="./index.html">Главное</a>
+                    <a href="./about.html">О нас</a>
+                    <a href="./portfolio.html">Портфолио</a>
+                    <a href="./services.html">Услуги</a>
+                </div>
+            </section>
+            <div class="footer_right">
+                <h2>Зелёное будущее вместе с JashylBonus</h2>
+                <div class="footer-columns">
+                    <div class="footer-column footer-about">
+                        <h3>Почта</h3>
+                        <a href="mailto:jashylbonus@gmail.com" class="links">jashylbonus@gmail.com</a>
+
+                        <h3>Телефон</h3>
+                        <a href="tel:+996999082024" class="links" target="_blank">+996 (999) 08-20-24</a>
+
+                        <h3>Адрес</h3>
+                        <a href="https://www.google.com/maps?q=г.+Ош,+ул.+Исанова,+81" class="links" target="_blank">
+                            г. Ош, ул. Исанова, 81
+                        </a>
+                    </div>
+
+                    <div class="footer-column">
+                        <h3>Соцсети</h3>
+                        <div class="social-icons">
+                            <a target="_blank" href="https://wa.me/+996999082024">
+                                <img src="../static/assets/icon/whatsApp.svg" alt="WhatsApp" class="footer_block">
+                            </a>
+                            <a target="_blank" href="https://instagram.com/jashyl.bonus">
+                                <img src="../static/assets/icon/instagram.svg" alt="Instagram" class="footer_block">
+                            </a>
+                            <a target="_blank" href="https://www.tiktok.com/@jashyl_bonus">
+                                <img src="../static/assets/icon/tikTok.svg" alt="TikTok" class="footer_block">
+                            </a>
+                            <a target="_blank" href="https://www.linkedin.com/comm/mynetwork/discovery-see-all/">
+                                <img src="../static/assets/icon/linkEdin.svg" alt="LinkedIn" class="footer_block">
+                            </a>
+                            <a target="_blank" href="https://t.me/jashyl_bonus">
+                                <img src="../static/assets/icon/telegram.svg" alt="Telegram" class="footer_block">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="footer-column app-play">
+                        <h3>Скачать приложение</h3>
+                        <a target="_blank" href="https://play.google.com/store/apps/details?id=com.prolab.jashylbonus">
+                            <img src="../static/assets/icon/googleplay.svg" alt="Google Play">
+                        </a>
+                        <a target="_blank" href="https://apps.apple.com/kg/app/jashyl-bonus/id6743342061">
+                            <img src="../static/assets/icon/appstore.svg" alt="App Store">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
+    </footer>
+    <script src="{% static 'assets/js/slider.js' %}"></script>
+</body>
+
+</html>

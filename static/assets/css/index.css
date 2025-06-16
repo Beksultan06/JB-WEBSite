@@ -1,0 +1,152 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Arima\,Inter\,Nunito\,Roboto/Montserrat/static/Montserrat-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Arima\,Inter\,Nunito\,Roboto/Inter/static/Inter_18pt-Regular.ttf') format('truetype');
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+
+.banner {
+    background-image: url('../images/banner/home-banner.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 800px;
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+}
+
+.banner div {
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
+}
+
+.banner-blur h1 {
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 1);
+    margin-top: 30px;
+}
+
+.banner-blur h2 {
+    font-family: Inter;
+    font-weight: 300;
+    font-size: 36px;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 1);
+    margin-top: 30px;
+}
+
+.banner-blur-a {
+    font-family: Inter;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 1);
+    margin-top: 40px;
+}
+
+/* --------
+-----------
+-----------
+----------- 
+BANNER END -----------------------------------------------------------------------------------------------------
+-----------
+-----------
+-----------
+-----------  */
+
+.team {
+    width: 100%;
+    position: relative;
+    top: 1300px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 1);
+}
+
+.team h4 {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: -6%;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 1);
+    margin-top: 50px;
+}
+
+.team-container{
+    width: 100%;
+    display: flex;
+    column-gap: 20px;
+}
+
+.team-card img {
+    width: 338px;
+    height: 400px;
+}
+
+.team-card h3 {
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: -6%;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 1);
+    margin-top: 15px;
+}
+
+.team-card p {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: -2%;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 15px;
+    margin-bottom: 50px;
+}
+
+.team-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.team-cards {
+    margin-top: 100px;
+    display: flex;
+    column-gap: 20px;
+    margin-left: 90px;
+    /* justify-content: space-between; */
+}

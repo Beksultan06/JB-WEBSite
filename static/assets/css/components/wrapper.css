@@ -1,0 +1,154 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('../../fonts/Arima\,Inter\,Nunito\,Roboto/Inter/static/Inter_18pt-Regular.ttf') format('truetype');
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Inter;
+}
+
+.container {
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+.wrapper {
+    position: relative;
+    top: 900px;
+    min-height: 5rem;
+    min-width: 20rem;
+    font-size: 2rem;
+    position: relative;
+    overflow: hidden;
+    mask-image: linear-gradient(to right,
+            rgba(0, 255, 0, 0.188),
+            rgb(30, 255, 0) 30%,
+            rgb(30, 255, 0) 70%,
+            rgb(0, 255, 0));
+    font-family: Inter;
+}
+
+.letter {
+    width: 1ch;
+    position: absolute;
+    top: 50%;
+    transform: translate(0px, -50%);
+    left: 100%;
+    animation: scroll 3.5s linear infinite;
+
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 56px;
+color: #00ff08;
+}
+
+@keyframes scroll {
+    to {
+        left: -1ch;
+    }
+}
+
+.letter1 {
+    animation-delay: calc(3.5s / 26 * (26 - 1) * -1);
+}
+
+.letter2 {
+    animation-delay: calc(3.5s / 26 * (26 - 2) * -1);
+}
+
+.letter3 {
+    animation-delay: calc(3.5s / 26 * (26 - 3) * -1);
+}
+
+.letter4 {
+    animation-delay: calc(3.5s / 26 * (26 - 4) * -1);
+}
+
+.letter5 {
+    animation-delay: calc(3.5s / 26 * (26 - 5) * -1);
+}
+
+.letter6 {
+    animation-delay: calc(3.5s / 26 * (26 - 6) * -1);
+}
+
+.letter7 {
+    animation-delay: calc(3.5s / 26 * (26 - 7) * -1);
+}
+
+.letter8 {
+    animation-delay: calc(3.5s / 26 * (26 - 8) * -1);
+}
+
+.letter9 {
+    animation-delay: calc(3.5s / 26 * (26 - 9) * -1);
+}
+
+.letter10 {
+    animation-delay: calc(3.5s / 26 * (26 - 10) * -1);
+}
+
+.letter11 {
+    animation-delay: calc(3.5s / 26 * (26 - 11) * -1);
+}
+
+.letter12 {
+    animation-delay: calc(3.5s / 26 * (26 - 12) * -1);
+}
+
+.letter13 {
+    animation-delay: calc(3.5s / 26 * (26 - 13) * -1);
+}
+
+.letter14 {
+    animation-delay: calc(3.5s / 26 * (26 - 14) * -1);
+}
+
+.letter15 {
+    animation-delay: calc(3.5s / 26 * (26 - 15) * -1);
+}
+
+.letter16 {
+    animation-delay: calc(3.5s / 26 * (26 - 16) * -1);
+}
+
+.letter17 {
+    animation-delay: calc(3.5s / 26 * (26 - 17) * -1);
+}
+
+.letter18 {
+    animation-delay: calc(3.5s / 26 * (26 - 18) * -1);
+}
+
+.letter19 {
+    animation-delay: calc(3.5s / 26 * (26 - 19) * -1);
+}
+
+.letter20 {
+    animation-delay: calc(3.5s / 26 * (26 - 20) * -1);
+}
+
+.letter21 {
+    animation-delay: calc(3.5s / 26 * (26 - 21) * -1);
+}
+
+.letter22 {
+    animation-delay: calc(3.5s / 26 * (26 - 22) * -1);
+}
+
+.letter23 {
+    animation-delay: calc(3.5s / 26 * (26 - 23) * -1);
+}
+
+.letter24 {
+    animation-delay: calc(3.5s / 26 * (26 - 24) * -1);
+}
+.letter25 {
+    animation-delay: calc(3.5s / 26 * (26 - 25) * -1);
+}
+.letter26 {
+    animation-delay: calc(3.5s / 26 * (26 - 26) * -1);
+}

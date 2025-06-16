@@ -1,0 +1,109 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Arima\,Inter\,Nunito\,Roboto/Montserrat/static/Montserrat-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Arima\,Inter\,Nunito\,Roboto/Inter/static/Inter_18pt-Regular.ttf') format('truetype');
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+.bonus {
+    width: 100%;
+    position: relative;
+    top: 1100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bonus h4 {
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: -6%;
+    text-transform: uppercase;
+}
+
+.bonus-box {
+    width: 80%;
+}
+
+.bonus-box h2 {
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 100%;
+    letter-spacing: -2%;
+    text-transform: uppercase;
+}
+
+.card {
+    margin-top: 30px;
+    width: 360px;
+    height: 550px;
+    background-color: rgba(0, 0, 0, 1);
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: w; */
+    /* justify-content: space-between; */
+}
+
+.card h3 {
+    font-family: Inter;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 120%;
+    letter-spacing: -6%;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 1);
+    padding: 30px;
+}
+
+.card h1 {
+    margin-bottom: 15px;
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 200px;
+    line-height: 100%;
+    letter-spacing: -8%;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 1);
+}
+
+.card-text {
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 100%;
+    text-transform: uppercase;
+    margin-top: 20px;
+    color: rgba(0, 0, 0, 1);
+}
+
+
+.bonus-box-cards {
+    display: flex;
+    column-gap: 20px;
+}
+
+/* --------
+-----------
+-----------
+----------- 
+BONUS END -----------------------------------------------------------------------------------------------------
+-----------
+-----------
+-----------
+-----------  */
