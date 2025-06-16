@@ -1,11 +1,10 @@
 from django.contrib import admin
 from apps.settings.models import Settings, ImageSlider, Bonus,Team, About, Services
-# Register your models here.
+from modeltranslation.admin import TranslationAdmin
 
 @admin.register(Settings)
-class SettingsAdmin(admin.ModelAdmin):
+class SettingsAdmin(TranslationAdmin):
     list_display = ['id', 'title']
-
 
 admin.site.register(ImageSlider)    
 admin.site.register(Bonus)    

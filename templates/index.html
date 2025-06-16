@@ -35,24 +35,53 @@
                     </span>
                     <ul>
                         <li>
-                            <a class="text" href="#">RU</a>
+                            <a class="language-switch" data-language="ky">Кыр</a>
                         </li>
                         <li>
-                            <a class="text" href="#">KG</a>
+                            <a class="language-switch" data-language="ru">Рус</a>
                         </li>
                     </ul>
                 </button>
-                <div class="container-search">
-                    <input checked="" class="checkbox" type="checkbox">
-                    <div class="mainbox">
-                        <div class="iconContainer">
-                            <img src="{% static 'assets/icon/search_icons.svg' %}" alt="">
-                        </div>
-                        <input class="search_input" placeholder="Поиск" type="text">
-                    </div>
-                </div>
+                <form method="get" action="" class="search-form">
+                    <input type="text" name="q" value="{{ search_query|default:'' }}" placeholder="Поиск..." class="search_input">
+                    <button type="submit">
+                        <img src="{% static 'assets/icon/search_icons.svg' %}" alt="Поиск">
+                    </button>
+                </form>
             </div>
         </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const languageSwitches = document.querySelectorAll('.language-switch');
+
+        const currentLanguage = window.location.pathname.split('/')[1];
+
+        languageSwitches.forEach(function (languageSwitch) {
+            const selectedLanguage = languageSwitch.getAttribute('data-language');
+
+            if (selectedLanguage === currentLanguage) {
+                languageSwitch.classList.add('active-language');
+            }
+
+            languageSwitch.addEventListener('click', function () {
+                const pathSegments = window.location.pathname.split('/');
+                
+                // ВАЖНО: здесь было ['ru', 'en'] — исправили на ['ru', 'ky']
+                if (['ru', 'ky'].includes(pathSegments[1])) {
+                    pathSegments[1] = selectedLanguage;
+                } else {
+                    pathSegments.splice(1, 0, selectedLanguage);
+                }
+
+                const newPath = pathSegments.join('/');
+                const newUrl = window.location.origin + newPath + window.location.search;
+
+                window.location.href = newUrl;
+            });
+        });
+    });
+</script>
+
     </header>
     <main class="main">
         <section class="banner" style="background-image: url({{ settings_id.image.url }});">

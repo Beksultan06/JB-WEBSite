@@ -16,10 +16,10 @@
 </head>
 
 <body>
-    <header class="header">
+     <header class="header">
         <div class="container header_container">
-            <a href="#" class="header_link-logo">
-                <img src="../static/assets/icon/logo_white.svg" alt="Логотип JashylBonus — платформа бонусов и акций"
+            <a href="{% url 'index' %}" class="header_link-logo">
+                <img src="{% static 'assets/icon/logo_white.svg' %}" alt="Логотип JashylBonus — платформа бонусов и акций"
                     class="header_logo">
             </a>
             <nav class="header_nav">
@@ -31,14 +31,14 @@
             <div class="header_tools">
                 <button class="btn-cssbuttons">
                     <span>
-                        Язык <img src="{% static 'assets/icon/vector_language.svg' %}" alt="">
+                        Язык <img src="{% static 'assets/icon/vector_language.svg' %}%" alt="">
                     </span>
                     <ul>
                         <li>
-                            <a class="text" href="#">RU</a>
+                            <a class="language-switch" data-language="ky">Кыр</a>
                         </li>
                         <li>
-                            <a class="text" href="#">KG</a>
+                            <a class="language-switch" data-language="ru">Рус</a>
                         </li>
                     </ul>
                 </button>
@@ -46,13 +46,43 @@
                     <input checked="" class="checkbox" type="checkbox">
                     <div class="mainbox">
                         <div class="iconContainer">
-                            <img src="../static/assets/icon/search_icons.svg" alt="">
+                            <img src="{% static 'assets/icon/search_icons.svg' %}" alt="">
                         </div>
                         <input class="search_input" placeholder="Поиск" type="text">
                     </div>
                 </div>
             </div>
         </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const languageSwitches = document.querySelectorAll('.language-switch');
+
+        const currentLanguage = window.location.pathname.split('/')[1];
+
+        languageSwitches.forEach(function (languageSwitch) {
+            const selectedLanguage = languageSwitch.getAttribute('data-language');
+
+            if (selectedLanguage === currentLanguage) {
+                languageSwitch.classList.add('active-language');
+            }
+
+            languageSwitch.addEventListener('click', function () {
+                const pathSegments = window.location.pathname.split('/');
+                if (['ru', 'ky'].includes(pathSegments[1])) {
+                    pathSegments[1] = selectedLanguage;
+                } else {
+                    pathSegments.splice(1, 0, selectedLanguage);
+                }
+
+                const newPath = pathSegments.join('/');
+                const newUrl = window.location.origin + newPath + window.location.search;
+
+                window.location.href = newUrl;
+            });
+        });
+    });
+</script>
+
     </header>
     <main class="main">
         <section class="banner" style="background-image: url({{ settings_id.image.url }});">

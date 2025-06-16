@@ -2,8 +2,9 @@ from django.shortcuts import render
 from django.views.generic import TemplateView
 
 from apps.settings.models import Settings, ImageSlider, Bonus, Team, About, Services
+from apps.settings.search import SearchMixin
 
-class IndexVIew(TemplateView):
+class IndexVIew(TemplateView, SearchMixin):
     template_name = 'index.html'
     
     def get_context_data(self, **kwargs):
@@ -15,7 +16,7 @@ class IndexVIew(TemplateView):
         return context
     
 
-class AboutView(TemplateView):
+class AboutView(TemplateView, SearchMixin):
     template_name = 'about.html'
 
     def get_context_data(self, **kwargs):
@@ -25,7 +26,7 @@ class AboutView(TemplateView):
         context['about_id'] = About.objects.latest("id")
         return context
 
-class PortfolioView(TemplateView):
+class PortfolioView(TemplateView, SearchMixin):
     template_name = 'portfolio.html'
 
     def get_context_data(self, **kwargs):
@@ -34,7 +35,7 @@ class PortfolioView(TemplateView):
         context['about_id'] = About.objects.latest("id")
         return context
 
-class ServicesView(TemplateView):
+class ServicesView(TemplateView, SearchMixin):
     template_name = 'services.html'
 
     def get_context_data(self, **kwargs):
