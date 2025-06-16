@@ -1,15 +1,17 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/assets/css/include/header.css">
-    <link rel="stylesheet" href="../static/assets/css/include/footer.css">
-    <link rel="stylesheet" href="../static/assets/css/components/banner.css">
-    <link rel="stylesheet" href="../static/assets/css/components/about.css">
-    <link rel="stylesheet" href="../static/assets/css/components/slider.css">
-    <link rel="stylesheet" href="../static/assets/css/components/slider-and-text.css">
+    <link rel="stylesheet" href="{% static 'assets/css/include/header.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/include/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/components/banner.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/components/about.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/components/slider.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/components/slider-and-text.css' %}">
     <title>Жашыл Бонус</title>
 </head>
 
@@ -21,15 +23,15 @@
                     class="header_logo">
             </a>
             <nav class="header_nav">
-                <a href="./index.html" class="header_link text">Главная</a>
-                <a href="./about.html" class="header_link text">О нас</a>
-                <a href="./portfolio.html" class="header_link text">Портфолио </a>
-                <a href="./services.html" class="header_link text">Услуги</a>
+                <a href="{% url 'index' %}" class="header_link text">Главная</a>
+                <a href="{% url 'about' %}" class="header_link text">О нас</a>
+                <a href="{% url 'portfolio' %}" class="header_link text">Портфолио</a>
+                <a href="{% url 'services' %}" class="header_link text">Услуги</a>
             </nav>
             <div class="header_tools">
                 <button class="btn-cssbuttons">
                     <span>
-                        Язык <img src="../static/assets/icon/vector_language.svg" alt="">
+                        Язык <img src="{% static 'assets/icon/vector_language.svg' %}%" alt="">
                     </span>
                     <ul>
                         <li>
@@ -37,9 +39,6 @@
                         </li>
                         <li>
                             <a class="text" href="#">KG</a>
-                        </li>
-                        <li>
-                            <a class="text" href="#">EN</a>
                         </li>
                     </ul>
                 </button>
@@ -56,32 +55,24 @@
         </div>
     </header>
     <main class="main">
-        <section class="banner">
+        <section class="banner" style="background-image: url({{ settings_id.image.url }});">
             <div class="banner-blur">
-                <h1>Осознанность. Экология. Вознаграждение</h1>
-                <h2>JashylBonus — это не просто бонусы. Это вклад в устойчивое будущее.</h2>
+                <h1>{{ settings_id.title }}</h1>
+                <h2>{{ settings_id.description }}</h2>
             </div>
         </section>
         <secction class="about container">
-            <h4>о нас </h4>
-
+            <h4>{{ settings_id.title2 }}</h4>
             <div class="about-texts">
-                <h2>Кто мы и зачем мы здесь</h2>
-                <p>JashylBonus — это социально-экологическая инициатива, направленная на сокращение отходов и
-                    стимулирование переработки с помощью инновационной бонусной системы. Наша миссия — внедрить культуру
-                    устойчивого потребления в Кыргызстане, делая её доступной каждому. Мы предлагаем простую модель:
-                    сдавайте пластиковые и алюминиевые отходы через фандоматы, получайте баллы в мобильном приложении и
-                    используйте их на реальные товары и услуги. Наша команда объединяет специалистов в сфере IT,
-                    экологии и цифрового дизайна, чтобы строить осознанное будущее вместе.</p>
+                <h2>{{ settings_id.title2 }}</h2>
+                <p>{{ settings_id.description2 }}</p>
             </div>
-
-            <img src="../static/assets/images/section-about/about_about-img.jpg" alt="О проекте Жашыл Бонус">
+            <img src="{{ settings_id.image2.url }}" alt="О проекте Жашыл Бонус">
         </secction>
         <section class="slider container">
-            <img class="slider-img" src="../static/assets/images/slider/slider-1.jpg" alt="">
-            <img class="slider-img" src="../static/assets/images/banner/home-banner.jpg" alt="">
-            <img class="slider-img" src="../static/assets/images/banner/universal-banner.jpg" alt="">
-            <img class="slider-img" src="../static/assets/images/section-about/about-img.jpg" alt="">
+            {% for image in image_all %}
+            <img class="slider-img" src="{{ image.image.url }}" alt="">
+            {% endfor %}
             <div>
                 <img class="slider-btn left" src="../static/assets/icon/slider/btn-left.svg">
             </div>
@@ -90,10 +81,10 @@
             </div>
         </section>
         <section class="slider-and-text container">
-            <h4>Медиаблок</h4>
+            <h4>{{ about_id.title }}</h4>
             <div class="SAT-block">
                 <div class="SAT-leftText">
-                    <h2>Концепция в действии Наша философия проста:</h2>
+                    <h2>{{ about_id.description }}:</h2>
                     <div class="SAT-LT-bnts">
                         <div class="SAT-LT-bnt left">
                             <img src="../static/assets/icon/slider-and-text/left-btn.svg" alt="">
@@ -103,10 +94,9 @@
                         </div>
                     </div>
                 </div>
-                <img src="../static/assets/images/slider-and-text/img-1.jpg" alt="">
+                <img src="{{ about_id.image.url }}" alt="">
                 <div class="SAT-rightText">
-                    <h2>осознанность — это действие.
-                        <br> Ниже вы найдёте краткие тезисы, которые описывают нашу миссию.</h2>
+                    <h2>{{ about_id.text }}</h2>
                 </div>
             </div>
         </section>
@@ -165,7 +155,7 @@
         </div>
         </div>
     </footer>
-    <script src="../static/assets/js/slider.js"></script>
+    <script src="{% static '/assets/js/slider.js' %}"></script>
 </body>
 
 </html>

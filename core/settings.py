@@ -32,6 +32,8 @@ ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS = [
     "jazzmin",
+    'modeltranslation',
+    'modeltranslation.admin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,6 +44,16 @@ INSTALLED_APPS = [
     'apps.settings',
 
 ]
+
+LANGUAGES = (
+    ('ru', 'Russian'),
+    ('ky', 'Kyrgyz'),
+)
+
+LANGUAGE_CODE = 'ru'
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
+MODELTRANSLATION_LANGUAGES = ('ru', 'ky')
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

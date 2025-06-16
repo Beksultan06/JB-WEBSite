@@ -18,20 +18,20 @@
 <body>
     <header class="header">
         <div class="container header_container">
-            <a href="#" class="header_link-logo">
-                <img src="../static/assets/icon/logo_white.svg" alt="Логотип JashylBonus — платформа бонусов и акций"
+            <a href="{% url 'index' %}" class="header_link-logo">
+                <img src="{% static 'assets/icon/logo_white.svg' %}" alt="Логотип JashylBonus — платформа бонусов и акций"
                     class="header_logo">
             </a>
             <nav class="header_nav">
-                <a href="./index.html" class="header_link text">Главная</a>
-                <a href="./about.html" class="header_link text">О нас</a>
-                <a href="./portfolio.html" class="header_link text">Портфолио </a>
-                <a href="./services.html" class="header_link text">Услуги</a>
+                <a href="{% url 'index' %}" class="header_link text">Главная</a>
+                <a href="{% url 'about' %}" class="header_link text">О нас</a>
+                <a href="{% url 'portfolio' %}" class="header_link text">Портфолио</a>
+                <a href="{% url 'services' %}" class="header_link text">Услуги</a>
             </nav>
             <div class="header_tools">
                 <button class="btn-cssbuttons">
                     <span>
-                        Язык <img src="../static/assets/icon/vector_language.svg" alt="">
+                        Язык <img src="{% static 'assets/icon/vector_language.svg' %}%" alt="">
                     </span>
                     <ul>
                         <li>
@@ -40,16 +40,13 @@
                         <li>
                             <a class="text" href="#">KG</a>
                         </li>
-                        <li>
-                            <a class="text" href="#">EN</a>
-                        </li>
                     </ul>
                 </button>
                 <div class="container-search">
                     <input checked="" class="checkbox" type="checkbox">
                     <div class="mainbox">
                         <div class="iconContainer">
-                            <img src="../static/assets/icon/search_icons.svg" alt="">
+                            <img src="{% static 'assets/icon/search_icons.svg' %}" alt="">
                         </div>
                         <input class="search_input" placeholder="Поиск" type="text">
                     </div>
@@ -62,7 +59,7 @@
             <div class="banner-blur">
                 <h1>{{ settings_id.title }}</h1>
                 <h2>{{ settings_id.description }}</h2>
-                <a class="banner-blur-a" href="./about.html">подробнее</a>
+                <a class="banner-blur-a" href="{% url 'about' %}">подробнее</a>
             </div>
         </section>
         <secction class="about container">

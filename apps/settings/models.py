@@ -83,3 +83,59 @@ class Team(models.Model):
 
     class Meta:
         verbose_name_plural = 'Наша команда' 
+
+
+##################################
+
+class About(models.Model):
+    title = models.CharField(
+        max_length=155,
+        verbose_name='Заголовок'
+    )
+    description = models.TextField(
+        verbose_name='Описание'
+    )
+    image = models.ImageField(
+        upload_to='about',
+        verbose_name='Фото'
+    )
+    text = models.TextField(
+        verbose_name='Текст'
+    )
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural = 'О нас'
+
+#####################################
+
+
+class Services(models.Model):
+    title = models.CharField(
+        max_length=155,
+        verbose_name='Заголовок',
+        default='Экопродукты',
+        blank=True, null=True
+    )
+    title2 = models.CharField(
+        max_length=155,
+        verbose_name='Заголовок 2',
+        default='Продукты с заботой о планете',
+        blank=True, null=True
+    )
+    title_obj = models.CharField(
+        max_length=155,
+        verbose_name='Заголовка Объекта'
+    )
+    image_obj = models.ImageField(
+        upload_to='services',
+        verbose_name='Фото'
+    )
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural = 'Наши услуги'
