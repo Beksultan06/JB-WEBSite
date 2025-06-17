@@ -42,15 +42,21 @@
                         </li>
                     </ul>
                 </button>
-                <div class="container-search">
-                    <input checked="" class="checkbox" type="checkbox">
-                    <div class="mainbox">
-                        <div class="iconContainer">
-                            <img src="{% static 'assets/icon/search_icons.svg' %}" alt="">
-                        </div>
-                        <input class="search_input" placeholder="Поиск" type="text">
-                    </div>
-                </div>
+                <form method="get" action="" class="search-form" style="display: flex; align-items: center;">
+    <div class="mainbox" style="display: flex; align-items: center; background-color: #4CAF50; border-radius: 25px; padding: 5px 10px;">
+        <div class="iconContainer" style="margin-right: 8px;">
+            <img src="{% static 'assets/icon/search_icons.svg' %}" alt="Поиск" style="width: 20px; height: 20px;">
+        </div>
+        <input
+            type="text"
+            name="q"
+            value="{{ search_query|default:'' }}"
+            placeholder="Поиск..."
+            class="search_input"
+            style="border: none; outline: none; background: transparent; color: white; font-size: 14px;"
+        >
+    </div>
+</form>
             </div>
         </div>
     <script>
@@ -139,10 +145,10 @@
             <section class="footer_left">
                 <img src="../static/assets/icon/logo_white.svg" alt="Логотип JashylBonus — платформа бонусов и акций">
                 <div class="footer_left-links">
-                    <a href="./index.html">Главное</a>
-                    <a href="./about.html">О нас</a>
-                    <a href="./portfolio.html">Портфолио</a>
-                    <a href="./services.html">Услуги</a>
+                    <a href="{% url 'index' %}">Главное</a>
+                    <a href="{% url 'about' %}">О нас</a>
+                    <a href="{% url 'portfolio' %}">Портфолио</a>
+                    <a href="{% url 'services' %}">Услуги</a>
                 </div>
             </section>
             <div class="footer_right">

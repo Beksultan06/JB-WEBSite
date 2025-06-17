@@ -87,6 +87,7 @@ BANNER END ---------------------------------------------------------------------
 
 .team {
     width: 100%;
+    margin-top: 200px;
     position: relative;
     top: 1300px;
     display: flex;

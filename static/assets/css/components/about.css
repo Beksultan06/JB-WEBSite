@@ -51,7 +51,7 @@
 
 .about {
     position: relative;
-    top: 800px;
+    top: 1000px;
     display: flex;
     justify-content: space-between;
     flex-direction: row;

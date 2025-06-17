@@ -1,4 +1,5 @@
 from django.db.models import Q
+from apps.settings.models import Settings, Bonus, Team, About, Services 
 
 class SearchMixin:
     def get_search_results(self, query):

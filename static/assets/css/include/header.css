@@ -72,7 +72,7 @@
     cursor: pointer;
 }
 
-.container-search {
+.search-form {
     position: relative;
     width: fit-content;
 }
@@ -91,7 +91,7 @@
     transition: all 0.3s ease;
 }
 
-.checkbox:focus {
+.search_input:focus {
     border: none;
     outline: none;
 }
